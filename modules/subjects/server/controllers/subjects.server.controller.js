@@ -228,6 +228,12 @@ exports.subjectByID = function (req, res, next, id) {
     });
   }
 
+  Subject.findOneAndUpdate({ _id: id }, { $inc: { pv: 1 } }).exec(function (err, subject) {
+    if (err) {
+      return next(err);
+    }
+  });
+
   Subject.findById(id).populate('user', 'displayName').populate('comments', 'content user.displayName user.profileImageURL created updated').exec(function (err, subject) {
     if (err) {
       return next(err);

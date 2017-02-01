@@ -17,11 +17,11 @@
                 <div class="row primary">
                   <div class="col-sm-9 col-xs-9 thread-title">
                     <a href="/subjects/{{subject._id}}" >
-                      <span class="forum-badge ng-binding" ng-bind="subject.subcat"></span>&nbsp;<span ng-bind="subject.title"></span>
+                      <span class="forum-badge " ng-bind="subject.subcat"></span>&nbsp;<span ng-bind="subject.title"></span>
                     </a>
                   </div>
                   <div class="thread-counts col-xs-3 col-md-3 col-sm-3">
-                    <span class="thread-total-comment ng-binding" ng-bind="subject.comments.length"></span>
+                    <span class="thread-total-comment " ng-bind="subject.pv"></span>
                   </div>
                 </div>
                 <div class="row secondary hidden-xs">

@@ -12,7 +12,7 @@
       title: '主题',
       state: 'subjects',
       type: 'dropdown',
-      roles: ['admin']
+      roles: ['*']
     });
 
     // Add the dropdown list item
