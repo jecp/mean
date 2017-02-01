@@ -128,7 +128,7 @@ var UserSchema = new Schema({
   // add
   mobile: {
     type: Number,
-    unique: true,
+    // unique: true,
     // validate: [validateLocalStrategyProperty, '手机号已存在'],
     minLength: [11, '手机号格式不正确，请检查'],
     maxLength: [11, '手机号格式不正确，请检查'],
