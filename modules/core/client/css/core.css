@@ -403,7 +403,7 @@ button,input,select,textarea{
 table{
   border-collapse:collapse;border-spacing:0}
 hr {
-  border:none;height:1px;*color:#fff;
+  border:none;height:1px;color:#fff;
 }
 img{
   -ms-interpolation-mode:bicubic}
