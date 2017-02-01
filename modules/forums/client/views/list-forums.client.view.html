@@ -1,0 +1,18 @@
+<section>
+  <div class="page-header">
+    <h1>论坛列表</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="forum in vm.forums" ui-sref="forums.view({ forumId: forum._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        发表于
+        <span ng-bind="forum.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="forum.user" ng-bind="forum.user.displayName"></span>
+        <span ng-if="!forum.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="forum.title"></h4>
+      <p class="list-group-item-text" ng-bind="forum.content"></p>
+    </a>
+  </div>
+</section>

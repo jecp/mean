@@ -1,0 +1,26 @@
+﻿<section>
+  <div class="page-header">
+    <h1>
+      喜欢
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.likes.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="like in vm.likes" data-ui-sref="admin.likes.edit({likeId: like._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        发表于
+        <span data-ng-bind="like.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="like.user" ng-bind="like.user.displayName"></span>
+        <span ng-if="!like.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="like.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="like.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="likes.$resolved && !likes.length">
+    No likes yet, why don't you <a data-ui-sref="admin.likes.create">create one</a>?
+  </div>
+</section>

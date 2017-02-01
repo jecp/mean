@@ -1,0 +1,18 @@
+<section>
+  <div class="page-header">
+    <h1>评论列表</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="comment in vm.comments" ui-sref="comments.view({ commentId: comment._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        发表于
+        <span ng-bind="comment.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="comment.user" ng-bind="comment.user.displayName"></span>
+        <span ng-if="!comment.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="comment.title"></h4>
+      <p class="list-group-item-text" ng-bind="comment.content"></p>
+    </a>
+  </div>
+</section>

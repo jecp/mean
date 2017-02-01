@@ -1,0 +1,40 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.subject._id ? '编辑主题' : '新的主题'}}</h1>
+  </div>
+  <div class="pull-right">
+    <a ng-show="vm.subject._id" class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div class="col-md-6" ng-controller="ForumsListController">
+    <div ng-repeat="forum in forums">
+      <h1 ng-bind="forum.title"></h1>
+    {{ forums }}</div>
+  </div>
+  <div class="col-md-8">
+    <form name="vm.form.subjectForm" class="form-horizontal" ng-submit="vm.save(vm.form.subjectForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <div class="form-group">            
+            <div class="list-group">
+              <h1>{{ vm.forums }}</h1>
+            </div>
+          </div>
+          <label class="control-label" for="title">标题</label>
+          <input name="title" type="text" ng-model="vm.subject.title" id="title" class="form-control" placeholder="标题" required autofocus>
+          <div ng-messages="vm.form.subjectForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Subject title is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="content">正文</label>
+          <textarea name="content" data-ng-model="vm.subject.content" id="content" class="form-control" cols="30" rows="10" placeholder="正文"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.subject._id ? '更新' : '提交'}}</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

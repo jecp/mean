@@ -1,0 +1,39 @@
+<section ng-controller="CommentsListController">
+{{vm.comments}}
+  <div class="user-comment-container">
+    <i class="triangle-up"></i>
+    <div class="user-comment-list" ng-repeat="comment in vm.comments | filter: this.subject._id">
+      <div class="user-item-comment" data-id="{{ comment._id }}">
+        <a class="user-item-pic" href="" title="{{ comment.user.displayName }}">
+            <img alt="{{ comment.user.displayName }}" ng-src="{{ comment.user.}}">
+        </a>
+        <div class="user-comment-content-wrap">
+          <div class="user-comment-hd">
+            <a class="component-user" href="/people/wang-shang">
+              <span class="cm-user-name" ng-bind="comment.user.displayName"></span>
+            </a>
+          </div>
+        <div class="user-comment-content"><br><span ng-bind="comment.content"></span></div>
+          <div class="user-comment-ft">
+              <span class="p-time" ng-bind="comment.updated | date:'medium'"></span>
+              
+              <div class="fr">
+                  <a href="javascript:void(0)" class="op-vote need-login iconfont icon-thumb-up" title="点赞"><em></em><span>0</span></a>
+                  <a href="javascript:void(0)" class="component-comment-reply  op-reply need-login" title="回复"><em></em><span>回复</span></a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="user-comment-form ">
+        <div class="emoji-picker-container">
+            <div class="emoji-wysiwyg-editor user-comment-editable need-login" data-id="55b39416-8985-421e-bfb3-1193d7d606c2" data-type="input" placeholder="写下你的评论…" contenteditable="true" title="评论"></div><i class="emoji-picker-icon emoji-picker need-login emoji-btn-picker" data-id="55b39416-8985-421e-bfb3-1193d7d606c2" data-type="picker" title="评论"></i>
+            <div class="user-command hide">
+                <a href="javascript:void(0)" name="closeform" class="user-btn-cancel font_link">取消</a>
+                <a href="javascript:void(0)" class="need-login user-btn-orange" title="评论">评论</a>
+            </div>
+            <div class="zm-comment-info hide"> </div>
+        </div>
+    </div> -->
+  </div>
+</section>

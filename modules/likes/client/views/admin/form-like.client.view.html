@@ -1,0 +1,30 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.like._id ? '编辑喜欢' : '新的喜欢'}}</h1>
+  </div>
+  <div class="pull-right">
+    <a ng-show="vm.like._id" class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.likeForm" class="form-horizontal" ng-submit="vm.save(vm.form.likeForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="title">标题</label>
+          <input name="title" type="text" ng-model="vm.like.title" id="title" class="form-control" placeholder="标题" required autofocus>
+          <div ng-messages="vm.form.likeForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Like title is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="content">正文</label>
+          <textarea name="content" data-ng-model="vm.like.content" id="content" class="form-control" cols="30" rows="10" placeholder="正文"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.like._id ? '更新' : '提交'}}</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

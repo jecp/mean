@@ -1,0 +1,26 @@
+﻿<section>
+  <div class="page-header">
+    <h1>
+      主题
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.subjects.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="subject in vm.subjects" data-ui-sref="admin.subjects.edit({subjectId: subject._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        发表于
+        <span data-ng-bind="subject.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="subject.user" ng-bind="subject.user.displayName"></span>
+        <span ng-if="!subject.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="subject.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="subject.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="subjects.$resolved && !subjects.length">
+    No subjects yet, why don't you <a data-ui-sref="admin.subjects.create">create one</a>?
+  </div>
+</section>

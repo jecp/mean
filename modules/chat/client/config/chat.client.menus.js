@@ -10,7 +10,7 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Chat',
+      title: '聊天',
       state: 'chat'
     });
   }

@@ -1,0 +1,9 @@
+<section>
+	<div class="list-group" ng-repeat="forum in vm.forums" ui-sref="forums.view({ forumId: forum._id })">
+	    <label for="forums" class="control-label">版块:</label>
+	    <select ng-model="forum" ng-options="forum._id as forum.name for forum in forums">
+	        <option value="">请选择版块:</option>
+	    </select>
+	    <span style="display:none;" class="forum">{{forum}}</span>
+	</div>
+</section>

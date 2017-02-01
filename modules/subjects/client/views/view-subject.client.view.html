@@ -1,0 +1,67 @@
+<section>
+  <div class="col-md-8 mt20">
+    <div class="panel panel-default">
+      <div class="panel-heading text-right">详情</div>
+      <div class="panel-body row">
+        <div style="border-bottom:1px solid #ccc;">
+          <div class="" style="margin-top:-5px;margin:15px;">
+            <label class="label label-default" ng-bind="vm.subject.subcat"></label>&nbsp;
+          <span class="h3" ng-bind="vm.subject.title"></span>
+          </div>
+        </div>
+        <div>
+          <div class="">
+            <div class="col-md-3 col-xs-3 fl" style="border-right:1px dashed #ccc;">
+              <div style="margin:15px;">
+                <a href="">
+                  <img src="{{vm.subject.user.avatar}}" alt="" style="max-width:48px;">
+                </a>
+                <div><p><i class="glyphicon glyphicon-user"></i>&nbsp;<a href=""><span data-ng-bind="vm.subject.user.displayName"></span></a></p></div>
+                <p><i class="glyphicon glyphicon-time"></i>&nbsp;<span data-ng-bind="vm.subject.created | date:'mediumDate'"></span></p>
+              </div>
+            </div>
+            <div class="col-md-9 col-xs-9 fl subject_content">
+              <div style="margin:15px;">
+                <p ng-bind="vm.subject.markdown"></p>
+              </div>
+              <div class="pull-right" ng-if="vm.subject.updated === null" >创建于<span class="text-muted" data-ng-bind="vm.subject.created | date:'medium'"></span></div>
+              <div class="pull-right" ng-if="vm.subject.updated !== null">修改于<span class="text-muted" data-ng-bind="vm.subject.updated | date:'medium'"></span></div>
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer text-right">
+        <i class="glyphicon glyphicon-eye-open"></i>&nbsp;<span data-ng-bind="vm.subject.pv"></span>
+      </div>
+    </div>
+    <div ng-include="'../modules/subjects/client/views/create-subject-comment.client.view.html'">
+    </div>
+    <div ng-if="vm.subject.comments.length > 0" class="panel panel-info" style="margin-top:10px;">
+      <div class="panel-heading">
+        <h5 class="text-right"><span class="glyphicon glyphicon-comment"></span>&nbsp;留言</h5>
+      </div>
+      <div class="panel-body">
+        <div class="row" ng-repeat="comment in vm.subject.comments" style="border-bottom:1px solid #ccc;div:last-child{border-bottom:none;}">
+          <div class="">
+            <div class="col-md-3 col-xs-3 fl" style="border-right:1px dashed #ccc; }">
+              <div style="margin:15px;">
+                <a href=""><img ng-src="{{comment.user.profileImageURL}}" alt="" style="max-width:36px;"></a>
+                <div><p><i class="glyphicon glyphicon-user"></i>&nbsp;<a href=""><span ng-bind="comment.user.displayName"></span></a></p></div>
+                <p><i class="glyphicon glyphicon-time"></i>&nbsp;<span ng-bind="comment.created | date:'mediumDate'"></span></p>
+              </div>
+            </div>
+            <div class="col-md-9 col-xs-9 fl">
+              <div style="margin:15px;">
+                <p ng-bind="comment.content"></p>
+              </div>
+              <div class="pull-right" ng-if="comment.updated === comment.created" >发表于&nbsp;<span class="text-muted" ng-bind="comment.created | date:'medium'"></span></div>
+              <!-- <div class="pull-right" ng-if="comment.updated !== comment.updated">修改于<span class="text-muted" ng-bind="comment.updated | date:'medium'"></span></div> -->
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-xs-4 pull-right">    
+  </div>  
+</section>

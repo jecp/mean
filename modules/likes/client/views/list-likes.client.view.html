@@ -1,0 +1,18 @@
+<section>
+  <div class="page-header">
+    <h1>喜欢列表</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="like in vm.likes" ui-sref="likes.view({ likeId: like._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        发表于
+        <span ng-bind="like.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="like.user" ng-bind="like.user.displayName"></span>
+        <span ng-if="!like.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="like.title"></h4>
+      <p class="list-group-item-text" ng-bind="like.content"></p>
+    </a>
+  </div>
+</section>

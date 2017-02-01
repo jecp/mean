@@ -1,6 +1,18 @@
+<style type="text/css" scoped="scoped">
+    @import "dist/stylesheets/thinker-md.user.css";
+    @import "dist/stylesheets/thinker-md.vendor.css";
+    @import "dist/emoji/nature.css";
+    @import "dist/emoji/object.css";
+    @import "dist/emoji/people.css";
+    @import "dist/emoji/place.css";
+    @import "dist/emoji/Sysmbols.css";
+    @import "dist/emoji/twemoji.css";
+</style>
+<script src="http://7xjuxp.com2.z0.glb.qiniucdn.com/js/thinker-md.vendor.js"></script>
+
 <section>
   <div class="page-header">
-    <h1>{{vm.article._id ? 'Edit Article' : 'New Article'}}</h1>
+    <h1>{{vm.article._id ? '编辑文章' : '新的文章'}}</h1>
   </div>
   <div class="pull-right">
     <a ng-show="vm.article._id" class="btn btn-primary" ng-click="vm.remove()">
@@ -11,18 +23,18 @@
     <form name="vm.form.articleForm" class="form-horizontal" ng-submit="vm.save(vm.form.articleForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="title">Title</label>
-          <input name="title" type="text" ng-model="vm.article.title" id="title" class="form-control" placeholder="Title" required autofocus>
+          <label class="control-label" for="title">标题</label>
+          <input name="title" type="text" ng-model="vm.article.title" id="title" class="form-control" placeholder="标题" required autofocus>
           <div ng-messages="vm.form.articleForm.title.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article title is required.</p>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label" for="content">Content</label>
-          <textarea name="content" data-ng-model="vm.article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+          <label class="control-label" for="content">正文</label>
+          <textarea name="content" data-ng-model="vm.article.content" id="content" data-provide="markdown" class="form-control" cols="30" rows="10" placeholder="这里输入内容,支持Markdown语法."></textarea>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.article._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-default">{{vm.article._id ? '更新' : '提交'}}</button>
         </div>
       </fieldset>
     </form>

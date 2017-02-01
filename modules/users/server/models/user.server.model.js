@@ -54,14 +54,14 @@ var UserSchema = new Schema({
   firstName: {
     type: String,
     trim: true,
-    default: '',
-    validate: [validateLocalStrategyProperty, 'Please fill in your first name']
+    default: ''
+    // validate: [validateLocalStrategyProperty, 'Please fill in your first name']
   },
   lastName: {
     type: String,
     trim: true,
-    default: '',
-    validate: [validateLocalStrategyProperty, 'Please fill in your last name']
+    default: ''
+    // validate: [validateLocalStrategyProperty, 'Please fill in your last name']
   },
   displayName: {
     type: String,
@@ -81,7 +81,7 @@ var UserSchema = new Schema({
   username: {
     type: String,
     unique: 'Username already exists',
-    required: 'Please fill in a username',
+    required: '用户名不能为空',
     validate: [validateUsername, 'Please enter a valid username: 3+ characters long, non restricted word, characters "_-.", no consecutive dots, does not begin or end with dots, letters a-z and numbers 0-9.'],
     lowercase: true,
     trim: true
@@ -124,6 +124,19 @@ var UserSchema = new Schema({
   },
   resetPasswordExpires: {
     type: Date
+  },
+  // add
+  mobile: {
+    type: Number,
+    unique: true,
+    // validate: [validateLocalStrategyProperty, '手机号已存在'],
+    minLength: [11, '手机号格式不正确，请检查'],
+    maxLength: [11, '手机号格式不正确，请检查'],
+    // required: '手机号不能为空',
+    trim: true
+  },
+  nickname: {
+    type: String
   }
 });
 

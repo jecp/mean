@@ -10,7 +10,7 @@
 
   function menuConfig(Menus) {
     Menus.addSubMenuItem('topbar', 'admin', {
-      title: 'Manage Articles',
+      title: '管理文章',
       state: 'admin.articles.list'
     });
   }

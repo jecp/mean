@@ -1,0 +1,28 @@
+<div class="sidebar-widget">
+	<h4>搜索</h4>
+	<form ng-click="expression">
+		<div class="input-group">
+			<input name="q" type="text" class="form-control" placeholder="搜搜看...">
+			<span class="input-group-btn">
+				<button class="btn button-success plr_10">搜索</button>
+			</span>
+		</div>
+	</form>
+</div>
+<div class="sidebar-widget">
+	<h4>版块</h4>
+	<ul>
+		<li>
+			<a href="/#!/subjects">所有贴子</a>
+		</li>
+		<li data-ng-repeat="item in forums">
+			<a href="/#!/subjects/"><span data-ng-bind=""></span></a>
+		</li>
+	</ul>
+</div>
+<div class="sidebar-widget"></div>
+<div class="sidebar-widget">
+	<a href="/#!/help">
+		帮助中心
+	</a>
+</div>

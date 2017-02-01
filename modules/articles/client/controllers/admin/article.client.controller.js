@@ -18,7 +18,7 @@
 
     // Remove existing Article
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('确认删除?')) {
         vm.article.$remove(function() {
           $state.go('admin.articles.list');
           Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Article deleted successfully!' });

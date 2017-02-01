@@ -1,0 +1,23 @@
+<section>
+	<div class="article-comment">
+		<div class="comment-header">
+			<i class="fa fa-comments"></i>
+			<span class="user-comments">评论</span>
+			<em ng-bind="vm.subject.comments.length"></em>
+		</div>
+	</div>
+	<div class="comment-input-warp">
+		<div class="editor">
+			<form name="vm.form.subjectForm" class="form-horizontal" ng-submit="vm.save(vm.form.subjectForm.$valid)" novalidate>
+			  <fieldset>
+			    <div class="form-group">
+			      <textarea name="comment" data-ng-model="vm.subject.comment" id="comment" class="form-control" cols="30" placeholder="写下你的评论"></textarea>
+			    </div>
+			    <div class="form-group">
+			      <button type="submit" class="btn btn-default">{{vm.subject.comments ? '留言' : '提交'}}</button>
+			    </div>
+			  </fieldset>
+			</form>
+		</div>
+	</div>
+</section>

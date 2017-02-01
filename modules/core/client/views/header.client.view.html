@@ -20,7 +20,7 @@
         <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
       </li>
     </ul>
-<!--     <ul class="nav navbar-nav navbar-right" ng-hide="vm.authentication.user">
+    <ul class="nav navbar-nav navbar-right" ng-hide="vm.authentication.user">
       <li ui-sref-active="active">
         <a ui-sref="authentication.signup">注册</a>
       </li>
@@ -28,7 +28,7 @@
       <li ui-sref-active="active">
         <a ui-sref="authentication.signin">登录</a>
       </li>
-    </ul> -->
+    </ul>
     <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
       <li class="dropdown" uib-dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" uib-dropdown-toggle role="button">
