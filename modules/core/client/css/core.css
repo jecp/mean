@@ -89,9 +89,6 @@ a:hover .header-profile-image {
 .sorts .active{
   background-color:#e6e6e6;
 }
-.mt20{
-  margin-top:20px; 
-}
 a,a:visited{
   text-decoration:none; color:#373737;
 }
@@ -120,9 +117,10 @@ p:nth-last-child(1){
 .wap-app li{
   -webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1 1 0%;-moz-flex:1 1 0%;-ms-flex: 1 1 0%;flex: 1 1 0%;text-align:center;
 }
-.wap-app .app-icon{width:50px;height:50px;display:block;margin:0 auto;
+.wap-app .app-icon{
+  width:50px;height:50px;display:block;margin:0 auto;
 }
-img{
+img {
   border:0;
 }
 .wap-app .txt{
@@ -137,25 +135,32 @@ img{
 .mgoods{
   clear:both;float:left;margin-left:20px;
 }
-.mgoods img{width:100%;max-width:120px;overflow: hidden;
+.mgoods img{
+  width:100%;max-width:120px;overflow: hidden;
 }
 /* admin cp */
 .bg-gray {
   color: #000;background-color: #F9F9F9;
 }
-.bg-gray ul li{text-align: right;
+.bg-gray ul li{
+  text-align: right;
 }
 .tips{
   background-color: #f4f4f4;text-align: center;font-size: 10px;
 }
 /* */
 /* help center css */
-header, nav, article, section, aside, footer, figure {display:block}
-.hc_left{/*position:fixed;top:70px;left:auto;width:25%;height:auto;margin-bottom:150px;*/text-align: left;line-height:25px;background: white;
+header, nav, article, section, aside, footer, figure {
+  display:block;
 }
-.hctop{text-align: center;color: gray;border-bottom: 1px solid #ccc;padding:10px;
+.hc_left{
+  /*position:fixed;top:70px;left:auto;width:25%;height:auto;margin-bottom:150px;*/text-align: left;line-height:25px;background: white;
 }
-.hc_left ul li{display:block;text-align:center;color:#f4f4f4;
+.hctop{
+  text-align: center;color: gray;border-bottom: 1px solid #ccc;padding:10px;
+}
+.hc_left ul li{
+  display:block;text-align:center;color:#f4f4f4;
 }
 .hc_center {
   padding-top: 25px;padding-left: 30px;background: white;margin-bottom: 100px;
@@ -172,7 +177,8 @@ header, nav, article, section, aside, footer, figure {display:block}
 }
 
 /* my_count_sub */
-.my_count{text-align:center;padding:20px;border:1px solid #ccc;border-radius:5px;box-shadow:3px 3px #fbfbfb;margin-bottom: 10px;
+.my_count{
+  text-align:center;padding:20px;border:1px solid #ccc;border-radius:5px;box-shadow:3px 3px #fbfbfb;margin-bottom: 10px;
 }
 .my_count h4{
   color:#337ab7;font-weight: 400;font-size: 30px;
@@ -196,15 +202,18 @@ header, nav, article, section, aside, footer, figure {display:block}
 }
 
 /* protocal_head */
-.protocal_head{height: 40px;border-top: 1px solid #eeeeee;border-bottom: 1px solid #eeeeee;background-color: #fafafa;box-shadow: 1px 1px 2px #f7f7f7;
+.protocal_head{
+  height: 40px;border-top: 1px solid #eeeeee;border-bottom: 1px solid #eeeeee;background-color: #fafafa;box-shadow: 1px 1px 2px #f7f7f7;
 }
-.errorMessage{height:400px;width:60%;margin:200px;
+.errorMessage{
+  height:400px;width:60%;margin:200px;
 }
 .od_header {
   padding-top: 15px;content: '';
 }
 /* avatar */
-.avatar .avatar-face{display: inline-block;position: relative;zoom:1;
+.avatar .avatar-face{
+  display: inline-block;position: relative;zoom:1;
 }
 .avatar .avatar-face img{
   border-radius: 50%;width:40px;height: 40px;background:#f7f7f7;overflow: hidden;line-height:12px;font-size:12px;text-align:left;box-shadow:0 0 1px #ddd; }
@@ -221,7 +230,8 @@ header, nav, article, section, aside, footer, figure {display:block}
 .thread-item .thread-list .forum-container .forum-content .forum-category-warpper {
   padding-bottom: 20px;position:relative;
 }
-.thread-item .text .thread-title a{display: block;width:100%;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;color:#3e485c;font-size:16px;margin-top:5px;margin-left:5px;
+.thread-item .text .thread-title a{
+  display: block;width:100%;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;color:#3e485c;font-size:16px;margin-top:5px;margin-left:5px;
 }
 .forum-badge{
   background:none repeat scroll 0 0 #F9F9F7;border:1px solid #E1E1E1;border-radius: 3px;color:#AAAAAA;display: inline-block;font-size:12px;line-height: 16px;padding:0 4px;
@@ -273,7 +283,8 @@ header, nav, article, section, aside, footer, figure {display:block}
   max-width: 100%;
   display: inline-block;
 }
-.forum_top_banner_text{width:705px;height:115px;color:#ffffff;text-align: center;
+.forum_top_banner_text{
+  width:705px;height:115px;color:#ffffff;text-align: center;
 }
 .top_banner_text {
   font-weight: 700px;font-size: 5em;color: yellow;
@@ -291,17 +302,14 @@ header, nav, article, section, aside, footer, figure {display:block}
 .ft10{
   font-size:10px;color:#ccc;
 }
-p img{width:100%;
+p img{
+  width:100%;
 }
 .mc_subject{
   content:'';border-bottom: 1px solid #ccc;
 }
 .subject_content img{
   max-width: 100%;
-}
-/* cart */
-.user_cart{
-  margin-top:15px;
 }
 /* article */
 .article_list_top{
@@ -313,12 +321,13 @@ p img{width:100%;
 .list-group-item-text{
   color:#000;font-size:14px;
 }
-p code{display: block;
+p code{
+  display: block;
     overflow-x: auto;
     padding: .5em;
     background: #000;
     color: #f8f8f8;
-  }
+}
 /* User */
 @media (min-width: 992px) {
   .nav-users {
@@ -354,56 +363,8 @@ p code{display: block;
 
 /* star_num */
 .user_profile_attr {
-  border-top:1px solid #eee;border-bottom:1px solid #eee;padding-top:15px;padding-bottom: 10px;padding-left:15px;margin-bottom:10px;  }
+  border-top:1px solid #eee;border-bottom:1px solid #eee;padding-top:15px;padding-bottom: 10px;padding-left:15px;margin-bottom:10px;
+}
 .vcard_star {
   float: left;width: 33.333%;font-size: 11px;text-transform: capitalize;
 }
-
-/* user_cart*/
-.user_cart_list img{
-  max-width: 120px;overflow: hidden;
-}
-
-/* order_print */
-html{
-  color:#000;
-  overflow-y:scroll;
-  background:#fff
-}
-body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,form,th,td{
-  margin:0;
-  padding:0
-}
-body,button,input,select,textarea{
-  font:14px/1.5 Tahoma,Arial,"\5b8b\4f53",sans-serif
-}
-address,cite,dfn,em,var {
-  font-style:normal
-}
-code,kbd,pre,samp,tt{
-  font-family:"Courier New",Courier,monospace;
-}
-small{
-  font-size:12px}
-ul,ol{
-  list-style:none;
-}
-a{text-decoration:none;
-}
-abbr[title],acronym[title]{
-  border-bottom:1px dotted;cursor:help}
-q:before,q:after {
-  content:''}:focus{outline:0}
-legend{
-  color:#000}fieldset,img{
-  border:none;
-}
-button,input,select,textarea{
-  font-size:100%}
-table{
-  border-collapse:collapse;border-spacing:0}
-hr {
-  border:none;height:1px;color:#fff;
-}
-img{
-  -ms-interpolation-mode:bicubic}
