@@ -125,16 +125,6 @@ var UserSchema = new Schema({
   resetPasswordExpires: {
     type: Date
   },
-  // add
-  mobile: {
-    type: Number,
-    // unique: true,
-    // validate: [validateLocalStrategyProperty, '手机号已存在'],
-    minLength: [11, '手机号格式不正确，请检查'],
-    maxLength: [11, '手机号格式不正确，请检查'],
-    // required: '手机号不能为空',
-    trim: true
-  },
   nickname: {
     type: String
   }
