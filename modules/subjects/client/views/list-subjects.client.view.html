@@ -9,8 +9,8 @@
           <div class="thread-item-inner">
             <div class="row">
               <div class="col-sm-1 col-md-1 col-xs-2 avatar avatar-40">
-                <span class="avatar-face" avatar="" displayname="subject.user.displayName">
-                  <img ng-src="./modules/users/client/img/profile/default.png" alt="subject.user.displayName">
+                <span class="avatar-face" avatar="" displayname="subject.user.nickName">
+                  <img ng-src="{{subject.user.profileImageURL}}" alt="subject.user.nickName">
                 </span>
               </div>
               <div class="col-sm-11 col-md-10 col-xs-10 text">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="row secondary hidden-xs">
                   <div class="col-sm-7 col-md-7 col-xs-7 thread-meta">
-                    <span ng-bind="subject.user.displayName" ></span>&nbsp;发表于&nbsp;
+                    <span ng-bind="subject.user.nickName" ></span>&nbsp;发表于&nbsp;
                     <span ng-bind="subject.created | date: 'medium'"></span>
                   </div>
                 </div>

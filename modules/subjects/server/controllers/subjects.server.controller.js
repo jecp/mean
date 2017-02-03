@@ -129,7 +129,7 @@ exports.delete = function (req, res) {
  * List of Subjects
  */
 exports.list = function (req, res) {
-  Subject.find().sort('-created').populate('user', 'displayName').exec(function (err, subjects) {
+  Subject.find().sort('-created').populate('user', 'displayName profileImageURL').exec(function (err, subjects) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)

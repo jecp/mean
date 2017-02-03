@@ -4,53 +4,46 @@
     <form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" class="form-control" ng-model="vm.credentials.firstName" placeholder="First Name" required autofocus>
-          <div ng-messages="vm.userForm.firstName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">First name is required.</p>
+          <label for="nickName">昵称</label>
+          <input type="text" id="nickName" name="nickName" class="form-control" ng-model="vm.credentials.nickName" placeholder="昵称" required>
+          <div ng-messages="vm.userForm.nickName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">昵称是必填项。</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" class="form-control" ng-model="vm.credentials.lastName" placeholder="Last Name" required>
-          <div ng-messages="vm.userForm.lastName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Last name is required.</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="form-control" ng-model="vm.credentials.email" placeholder="Email" lowercase required>
+          <label for="email">邮箱</label>
+          <input type="email" id="email" name="email" class="form-control" ng-model="vm.credentials.email" placeholder="邮箱" lowercase required>
           <div ng-messages="vm.userForm.email.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Email address is required.</p>
-            <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+            <p class="help-block error-text" ng-message="required">邮箱是必填项。</p>
+            <p class="help-block error-text" ng-message="email">邮箱地址不正确。</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" class="form-control" ng-model="vm.credentials.username" ng-pattern="vm.usernameRegex" placeholder="Username" lowercase required>
+          <label for="username">用户名</label>
+          <input type="text" id="username" name="username" class="form-control" ng-model="vm.credentials.username" ng-pattern="vm.usernameRegex" placeholder="用户名" lowercase required>
           <div ng-messages="vm.userForm.username.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Username is required.</p>
-            <p class="help-block error-text" ng-message="pattern">Please enter a valid username: 3+ characters long, non restricted word, characters "_-.", no consecutive dots, does not begin or end with dots, letters a-z and numbers 0-9.</p>
+            <p class="help-block error-text" ng-message="required">用户名是必填项。</p>
+            <p class="help-block error-text" ng-message="pattern">4字符以上，仅限英文字母和数字。</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="password">Password</label>
-            <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Password" uib-popover="{{vm.getPopoverMsg()}}" popover-trigger="outsideClick" password-validator required>
+          <label for="password">密码</label>
+            <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="密码" uib-popover="{{vm.getPopoverMsg()}}" popover-trigger="outsideClick" password-validator required>
           <div ng-messages="vm.userForm.password.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Password is required.</p>
+            <p class="help-block error-text" ng-message="required">密码是必填项。</p>
             <div ng-repeat="passwordError in passwordErrors">
               <p class="help-block error-text" ng-show="vm.userForm.password.$error.requirements">{{passwordError}}</p>
             </div>
           </div>
         </div>
         <div class="form-group" ng-show="!vm.userForm.password.$error.required">
-          <label>Password Requirements</label>
+          <label>密码 Requirements</label>
           <uib-progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></uib-progressbar>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Sign up</button>
+          <button type="submit" class="btn btn-primary">注册</button>
           &nbsp; or&nbsp;
-          <a ui-sref="authentication.signin" class="show-signup">Sign in</a>
+          <a ui-sref="authentication.signin" class="show-signup">登录</a>
         </div>
       </fieldset>
     </form>

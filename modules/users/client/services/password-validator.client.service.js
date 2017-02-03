@@ -24,7 +24,7 @@
     }
 
     function getPopoverMsg() {
-      var popoverMsg = 'Please enter a passphrase or password with ' + owaspPasswordStrengthTest.configs.minLength + ' or more characters, numbers, lowercase, uppercase, and special characters.';
+      var popoverMsg = '密码需要至少' + owaspPasswordStrengthTest.configs.minLength + '位或以上，包含大、小写字母、数字和特殊字符的组合。';
 
       return popoverMsg;
     }
