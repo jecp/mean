@@ -120,9 +120,8 @@ exports.delete = function (req, res) {
  */
 exports.list = function (req, res) {
   var obj = req.query.obj;
-  console.log(req.body);
   if (obj === 'articles') {
-    Comment.find({ articles: req.query.value }).sort('created').populate('user', 'username avatar created').exec(function (err, comments) {
+    Comment.find({ articles: req.query.value }).sort('created').populate('user', 'nickName profileImageURL created').exec(function (err, comments) {
       if (err) {
         return res.status(400).send({
           message: errorHandler.getErrorMessage(err)
@@ -132,7 +131,7 @@ exports.list = function (req, res) {
       }
     });
   } else if (obj === 'subjects') {
-    Comment.find({ subjects: req.query.value }).sort('created').populate('user', 'username avatar created').exec(function (err, comments) {
+    Comment.find({ subjects: req.query.value }).sort('created').populate('user', 'nickName profileImageURL created').exec(function (err, comments) {
       if (err) {
         return res.status(400).send({
           message: errorHandler.getErrorMessage(err)
@@ -142,7 +141,7 @@ exports.list = function (req, res) {
       }
     });
   } else {
-    Comment.find().sort('created').populate('user', 'displayname').populate('subjects', 'title').populate('articles', 'title').exec(function (err, comments) {
+    Comment.find().sort('created').populate('user', 'nickName profileImageURL created').populate('subjects', 'title').populate('articles', 'title').exec(function (err, comments) {
       if (err) {
         console.log(err);
       }

@@ -10,7 +10,6 @@
   function CommentsListController(CommentsService) {
     // console.log($location.url());
     var vm = this;
-    console.log(vm);
     // var subject = $scope.subject;
     // console.log($scope.comment);
 

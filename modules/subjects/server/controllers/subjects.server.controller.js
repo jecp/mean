@@ -234,7 +234,7 @@ exports.subjectByID = function (req, res, next, id) {
     }
   });
 
-  Subject.findById(id).populate('user', 'nickName').populate('comments', 'content user.nickName user.profileImageURL created updated').exec(function (err, subject) {
+  Subject.findById(id).populate('user', 'nickName profileImageURL').populate('comments', 'content user user.nickName user.profileImageURL created updated').exec(function (err, subject) {
     if (err) {
       return next(err);
     } else if (!subject) {
