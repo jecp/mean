@@ -27,7 +27,7 @@ exports.update = function (req, res) {
     user = _.extend(user, _.pick(req.body, whitelistedFields));
 
     user.updated = Date.now();
-    user.displayName = user.nickName;
+    user.nickName = user.nickName;
 
     user.save(function (err) {
       if (err) {
