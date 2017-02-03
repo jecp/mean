@@ -30,7 +30,6 @@ exports.signup = function (req, res) {
   // Then save the user
   user.save(function (err) {
     if (err) {
-      console.log(err);
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
@@ -160,7 +159,7 @@ exports.saveOAuthUserProfile = function (req, providerUserProfile, done) {
           User.findUniqueUsername(possibleUsername, null, function (availableUsername) {
             user = new User({
               firstName: providerUserProfile.firstName,
-              lastName: providerUserProfile.lastName,
+              nickName: providerUserProfile.lastName,
               username: availableUsername,
               displayName: providerUserProfile.displayName,
               profileImageURL: providerUserProfile.profileImageURL,

@@ -126,7 +126,8 @@ var UserSchema = new Schema({
     type: Date
   },
   nickName: {
-    type: String
+    type: String,
+    default: ''
   }
 });
 
