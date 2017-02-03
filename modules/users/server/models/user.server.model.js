@@ -69,10 +69,10 @@ var UserSchema = new Schema({
   },
   email: {
     type: String,
-    index: {
-      unique: true,
-      sparse: true // For this to work on a previously indexed field, the index must be dropped & the application restarted.
-    },
+    // index: {
+    //   unique: true,
+    //   sparse: true // For this to work on a previously indexed field, the index must be dropped & the application restarted.
+    // },
     lowercase: true,
     trim: true,
     default: '',
@@ -80,8 +80,8 @@ var UserSchema = new Schema({
   },
   username: {
     type: String,
-    // unique: 'Username already exists',
-    // required: '用户名不能为空',
+    unique: 'Username already exists',
+    required: '用户名不能为空',
     validate: [validateUsername, 'Please enter a valid username: 3+ characters long, non restricted word, characters "_-.", no consecutive dots, does not begin or end with dots, letters a-z and numbers 0-9.'],
     lowercase: true,
     trim: true
